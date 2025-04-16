@@ -1,0 +1,40 @@
+#root {
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+.Box {
+  width: fit-content;
+  padding: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  background-color: #45474f;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.Box button {
+  background-color: transparent;
+  border: none;
+}
+
+.Box i {
+  align-self: center;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-size: clamp(20px, 5vw, 30px);
+}
+
+@media (max-width: 768px) {
+  .Box {
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+  }
+  .Box i {
+    rotate: 90deg;
+  }
+}

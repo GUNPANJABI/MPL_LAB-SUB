@@ -1,0 +1,159 @@
+@import url("./src/assets/fonts/money/stylesheet.css");
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+
+:root {
+  --note-green1: #367055;
+  --note-green2: #a6cf98;
+}
+.main_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.money_paper {
+  background: #cfeed4;
+  display: inline-block;
+  padding: 12px 0px;
+  position: relative;
+}
+.money_paper::before,
+.money_paper::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: var(--note-green2);
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin: 0 15px;
+}
+
+.moneys {
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: clamp(25px, 5vw, 70px);
+  color: rgba(0, 0, 0, 0.7);
+  border-top: 4px solid var(--note-green2);
+  border-bottom: 4px solid var(--note-green2);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-variant-numeric: tabular-nums;
+  font-family: "Moneymachine PERSONAL";
+}
+.moneys::before {
+  font-family: monospace;
+  content: attr(data-currency);
+  position: absolute;
+  top: 12px;
+  left: -8px;
+  font-size: 20px;
+}
+.moneys::after {
+  font-family: monospace;
+  content: attr(data-cent);
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.5);
+  font-variant-numeric: tabular-nums;
+}
+
+.paper_shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.inputBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: column;
+  width: fit-content;
+  padding: 15px;
+  padding-top: 5px;
+}
+
+.inputBox h2 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: clmap(18px, 5vw, 50px);
+}
+.inputBox h3 {
+  font-size: clamp(15px, 3vw, 21px);
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: monospace;
+  color: var(--note-green2);
+}
+
+.inputBox .Flag {
+  margin-left: 0px;
+  width: clamp(60px, 5vw, 80px);
+  height: clamp(30px, 5vw, 40px);
+  margin: 0px;
+  padding: 0px;
+}
+
+select {
+  padding-left: 10px;
+  padding-right: 50px;
+  width: clamp(200px, 50vw, 300px);
+  height: clamp(30px, 5vw, 50px);
+  background-color: var(--note-green2);
+  color: black;
+  font-family: monospace;
+  font-size: clamp(15px, 3vw, 21px);
+}
+select option {
+  display: flex;
+  gap: 20px;
+  font-family: monospace;
+  width: 200px;
+}
+
+input {
+  height: clamp(30px, 5vw, 50px);
+  background-color: #a9a9a9;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: 21px;
+  padding-left: 10px;
+}
+
+@media (max-width: 600px) {
+  /* your CSS rules here */
+  .moneys::after {
+    font-size: 10px;
+  }
+  .moneys::before {
+    font-size: 10px;
+  }
+  .money_paper::before,
+  .money_paper::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .moneys::after {
+    font-size: 8px;
+  }
+  .moneys::before {
+    font-size: 8px;
+  }
+  .money_paper::before,
+  .money_paper::after {
+    content: "";
+    width: 15px;
+    height: px;
+  }
+}
